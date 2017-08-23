@@ -115,8 +115,16 @@ for name, model in models:
 	results.append(cv_results)
 	names.append(name)
 	msg = "%s: %f (%f)" % (name, cv_results.mean(), cv_results.std())
+	stack = [];
+	stack.append(cv_results.mean())
 	print(msg)
+
+# Printing the maximum accuracy value 
 	
+max_accuracy = numpy.amax(stack)
+print "Max accuracy =" + str(max_accuracy)
+	
+ 
 	
 # Compare Algorithms
 fig = plt.figure()
